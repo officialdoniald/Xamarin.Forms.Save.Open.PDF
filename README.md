@@ -9,16 +9,7 @@ Android:
 
 In the AndroidManifest.xml file, you have to add theese lines:
 
-a, this is between the <android> tags:
-
-<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true">
-			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
-</provider>
-
-b, this is outside the <android> tags:
-
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+https://github.com/officialdoniald/Xamarin.Forms.Save.Open.PDF/blob/master/Xamarin.Forms.Save.Open.PDF/Xamarin.Forms.Save.Open.PDF.Android/Resources/xml/provider_paths.xml
 
 Create, if you don't create yet, an "xml" folder into the "Resources" folder in the Android Project, and create an xml file, and call it: "provider_paths.xml".
 The file should contain:
