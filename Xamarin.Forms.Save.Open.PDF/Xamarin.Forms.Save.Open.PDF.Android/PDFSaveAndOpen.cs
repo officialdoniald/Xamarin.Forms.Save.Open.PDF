@@ -18,7 +18,7 @@ namespace Droid.Implementations
 {
     public class PDFSaveAndOpen : IPDFSaveAndOpen
     {
-        public async Task SaveAndView(string fileName, String contentType, MemoryStream stream, PDFOpenContext context)
+        public async Task SaveAndView(string fileName, string contentType, MemoryStream stream, PDFOpenContext context)
         {
             string exception = string.Empty;
             string root = null;
@@ -27,20 +27,24 @@ namespace Droid.Implementations
             {
                 ActivityCompat.RequestPermissions((Activity)Forms.Context, new String[] { Manifest.Permission.WriteExternalStorage }, 1);
             }
-            
-            if (Android.OS.Environment.IsExternalStorageEmulated)
-            {
-                root = Android.OS.Environment.ExternalStorageDirectory.ToString();
-            }
-            else
-                root = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            Java.IO.File myDir = new Java.IO.File(root + "/PDFFiles");
+            //if (Android.OS.Environment.IsExternalStorageEmulated)
+            //{
+            //    root = Android.OS.Environment.ExternalStorageDirectory.ToString();
+            //}
+            //else
+            //    root = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            root = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            Java.IO.File myDir = new Java.IO.File(Path.Combine(root, "PDFFiles"));
             myDir.Mkdir();
 
             Java.IO.File file = new Java.IO.File(myDir, fileName);
-
+            
             if (file.Exists()) file.Delete();
+            
+            //file.CreateNewFile();
 
             try
             {

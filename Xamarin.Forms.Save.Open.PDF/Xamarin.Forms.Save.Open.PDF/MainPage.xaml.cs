@@ -1,10 +1,13 @@
 ﻿using System;
 using System.IO;
+using System.Net.Http;
 
 namespace Xamarin.Forms.Save.Open.PDF
 {
     public partial class MainPage : ContentPage
     {
+        private string _uri = "https://officialdoniald.com/testpdf.pdf";
+
         public MainPage()
         {
             InitializeComponent();
@@ -17,9 +20,22 @@ namespace Xamarin.Forms.Save.Open.PDF
         /// <param name="e"></param>
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            MemoryStream stream = new MemoryStream();
+            HttpClient client = new HttpClient();
 
-            await Xamarin.Forms.DependencyService.Get<IPDFSaveAndOpen>().SaveAndView(Guid.NewGuid() + ".pdf", "application / pdf", stream, PDFOpenContext.InApp);
+            var uri = new Uri(_uri);
+            
+            Stream content;
+            MemoryStream stream = new MemoryStream();
+            
+            var response = await client.GetAsync(uri);
+
+            if (response.IsSuccessStatusCode)
+            {
+                content = await response.Content.ReadAsStreamAsync();
+                content.CopyTo(stream);
+            }
+
+            await Xamarin.Forms.DependencyService.Get<IPDFSaveAndOpen>().SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.InApp);
         }
 
         /// <summary>
@@ -29,9 +45,22 @@ namespace Xamarin.Forms.Save.Open.PDF
         /// <param name="e"></param>
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
+            HttpClient client = new HttpClient();
+
+            var uri = new Uri(_uri);
+
+            Stream content;
             MemoryStream stream = new MemoryStream();
 
-            await Xamarin.Forms.DependencyService.Get<IPDFSaveAndOpen>().SaveAndView(Guid.NewGuid() + ".pdf", "application / pdf", stream, PDFOpenContext.ChooseApp);
+            var response = await client.GetAsync(uri);
+
+            if (response.IsSuccessStatusCode)
+            {
+                content = await response.Content.ReadAsStreamAsync();
+                content.CopyTo(stream);
+            }
+
+            await Xamarin.Forms.DependencyService.Get<IPDFSaveAndOpen>().SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.ChooseApp);
         }
     }
 }
