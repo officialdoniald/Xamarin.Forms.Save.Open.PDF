@@ -24,6 +24,7 @@ Don't need any nessessary thing.
 3. Use the packge's function:
 
 await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.InApp); // if you want to open the PDF in your app
+
 await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.ChooseApp); // if you want to open the PDF outside the app
 
 First parameter: Guid.NewGuid() + ".pdf" -> I created a uniqe name of the pdf file, but you can change whatever you want
