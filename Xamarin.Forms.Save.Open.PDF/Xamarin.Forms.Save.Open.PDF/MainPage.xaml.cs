@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.XamarinFormsSaveOpenPDFPackage;
+using System;
 using System.IO;
 using System.Net.Http;
 
@@ -35,7 +36,8 @@ namespace Xamarin.Forms.Save.Open.PDF
                 content.CopyTo(stream);
             }
 
-            await Xamarin.Forms.DependencyService.Get<IPDFSaveAndOpen>().SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.InApp);
+            await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.InApp);
+            
         }
 
         /// <summary>
@@ -60,7 +62,7 @@ namespace Xamarin.Forms.Save.Open.PDF
                 content.CopyTo(stream);
             }
 
-            await Xamarin.Forms.DependencyService.Get<IPDFSaveAndOpen>().SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.ChooseApp);
+            await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.ChooseApp);
         }
     }
 }
