@@ -9,14 +9,11 @@ Android:
 
 In the AndroidManifest.xml file, you have to add theese lines:
 
-https://github.com/officialdoniald/Xamarin.Forms.Save.Open.PDF/blob/master/Xamarin.Forms.Save.Open.PDF/Xamarin.Forms.Save.Open.PDF.Android/Resources/xml/provider_paths.xml
+https://github.com/officialdoniald/Xamarin.Forms.Save.Open.PDF/blob/master/Xamarin.Forms.Save.Open.PDF/Xamarin.Forms.Save.Open.PDF.Android/Properties/AndroidManifest.xml
 
 Create, if you don't create yet, an "xml" folder into the "Resources" folder in the Android Project, and create an xml file, and call it: "provider_paths.xml".
 The file should contain:
-<?xml version="1.0" encoding="UTF-8" ?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-	<root-path name="root" path="." />
-</paths>
+https://github.com/officialdoniald/Xamarin.Forms.Save.Open.PDF/blob/master/Xamarin.Forms.Save.Open.PDF/Xamarin.Forms.Save.Open.PDF.Android/Resources/xml/provider_paths.xml
 
 Android ready, let's go to iOS.
 
