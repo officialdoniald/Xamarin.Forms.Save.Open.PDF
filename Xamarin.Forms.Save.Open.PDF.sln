@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Forms.Save.Open.PDF.Android", "Xamarin.Forms.Save.Open.PDF\Xamarin.Forms.Save.Open.PDF.Android\Xamarin.Forms.Save.Open.PDF.Android.csproj", "{3E47B2A6-D179-4F70-B749-197B45612DCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Forms.Save.Open.PDF.iOS", "Xamarin.Forms.Save.Open.PDF\Xamarin.Forms.Save.Open.PDF.iOS\Xamarin.Forms.Save.Open.PDF.iOS.csproj", "{F2E08762-866B-422C-8DA0-CA97BC464F0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Forms.Save.Open.PDF", "Xamarin.Forms.Save.Open.PDF\Xamarin.Forms.Save.Open.PDF\Xamarin.Forms.Save.Open.PDF.csproj", "{432A5A34-EFB3-43B1-9666-34F74F11329C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin.Forms.Save.Open.PDF", "Xamarin.Forms.Save.Open.PDF\Xamarin.Forms.Save.Open.PDF\Xamarin.Forms.Save.Open.PDF.csproj", "{432A5A34-EFB3-43B1-9666-34F74F11329C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinFormsSaveOpenPDFPackage", "XamarinFormsSaveOpenPDFPackage\XamarinFormsSaveOpenPDFPackage.csproj", "{4B8094DE-18CD-438E-97A8-B74A3EB83A23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,30 @@ Global
 		{432A5A34-EFB3-43B1-9666-34F74F11329C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{432A5A34-EFB3-43B1-9666-34F74F11329C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{432A5A34-EFB3-43B1-9666-34F74F11329C}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Release|iPhone.Build.0 = Release|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{4B8094DE-18CD-438E-97A8-B74A3EB83A23}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
