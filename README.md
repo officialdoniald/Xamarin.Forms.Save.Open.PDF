@@ -27,6 +27,6 @@ await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(Guid.NewGuid() + "
 
 await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(Guid.NewGuid() + ".pdf", "application/pdf", stream, PDFOpenContext.ChooseApp); // if you want to open the PDF outside the app
 
-First parameter: Guid.NewGuid() + ".pdf" -> I created a uniqe name of the pdf file, but you can change whatever you want
-Second parameter: a stream (System.IO.Stream), so you need to download or open an existing pdf, the point is you have to convert your pdf into a stream
+First parameter: Guid.NewGuid() + ".pdf" -> I created a unique name for the pdf file, but you can change it to whatever you want
+Second parameter: a stream (System.IO.Stream), so you need to download or open an existing pdf, the point is that you have to convert your pdf into a stream
 Third parameter: how you want to open your pdf
