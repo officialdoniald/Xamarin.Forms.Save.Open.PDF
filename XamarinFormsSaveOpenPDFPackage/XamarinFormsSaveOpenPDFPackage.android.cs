@@ -1,14 +1,16 @@
 ﻿using Android;
 using Android.Content;
 using Android.Content.PM;
-using Android.Support.V4.App;
-using Android.Support.V4.Content;
 using Android.Webkit;
-using Java.IO;
+using Android.App;
+
+using AndroidX.Core.App;
+using AndroidX.Core.Content;
+
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Android.App;
+
 using Xamarin.Forms;
 
 namespace Plugin.XamarinFormsSaveOpenPDFPackage
@@ -23,9 +25,9 @@ namespace Plugin.XamarinFormsSaveOpenPDFPackage
             string exception = string.Empty;
             string root = null;
 
-            if (ContextCompat.CheckSelfPermission(Forms.Context, Manifest.Permission.WriteExternalStorage) != Permission.Granted)
+            if (ContextCompat.CheckSelfPermission(Android.App.Application.Context, Manifest.Permission.WriteExternalStorage) != Permission.Granted)
             {
-                ActivityCompat.RequestPermissions((Activity)Forms.Context, new String[] { Manifest.Permission.WriteExternalStorage }, 1);
+                ActivityCompat.RequestPermissions((Activity)Android.App.Application.Context, new string[] { Manifest.Permission.WriteExternalStorage }, 1);
             }
 
             //if (Android.OS.Environment.IsExternalStorageEmulated)
@@ -48,7 +50,7 @@ namespace Plugin.XamarinFormsSaveOpenPDFPackage
 
             try
             {
-                FileOutputStream outs = new FileOutputStream(file);
+                Java.IO.FileOutputStream outs = new Java.IO.FileOutputStream(file);
                 outs.Write(stream.ToArray());
 
                 outs.Flush();
@@ -65,19 +67,18 @@ namespace Plugin.XamarinFormsSaveOpenPDFPackage
                 string mimeType = MimeTypeMap.Singleton.GetMimeTypeFromExtension(extension);
                 Intent intent = new Intent(Intent.ActionView);
                 intent.SetFlags(ActivityFlags.ClearTop | ActivityFlags.NewTask);
-                Android.Net.Uri path = FileProvider.GetUriForFile(Forms.Context, Android.App.Application.Context.PackageName + ".provider", file);
+                Android.Net.Uri path = FileProvider.GetUriForFile(Android.App.Application.Context, Android.App.Application.Context.PackageName + ".provider", file);
                 intent.SetDataAndType(path, mimeType);
                 intent.AddFlags(ActivityFlags.GrantReadUriPermission);
 
                 switch (context)
                 {
+                    default:
                     case PDFOpenContext.InApp:
-                        Forms.Context.StartActivity(intent);
+                        Android.App.Application.Context.StartActivity(intent);
                         break;
                     case PDFOpenContext.ChooseApp:
-                        Forms.Context.StartActivity(Intent.CreateChooser(intent, "Choose App"));
-                        break;
-                    default:
+                        Android.App.Application.Context.StartActivity(Intent.CreateChooser(intent, "Choose App"));
                         break;
                 }
             }
