@@ -21,8 +21,8 @@ namespace Plugin.XamarinFormsSaveOpenPDFPackage
             //Create a file and write the stream into it.
             FileStream fileStream = File.Open(filePath, FileMode.Create);
             stream.Position = 0;
-            stream.CopyTo(fileStream);
-            fileStream.Flush();
+            await stream.CopyToAsync(fileStream);
+            await fileStream.FlushAsync();
             fileStream.Close();
 
             //Invoke the saved document for viewing
